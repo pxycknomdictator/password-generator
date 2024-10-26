@@ -4,4 +4,11 @@ interface ChildrenProps {
   children: ReactNode;
 }
 
-export type { ChildrenProps };
+interface StateInitialValues {
+  passwordLength: string;
+  includeSpecialCharacters: boolean;
+  includeNumbers: boolean;
+  includeSymbols: boolean;
+}
+
+export type { ChildrenProps, StateInitialValues };
