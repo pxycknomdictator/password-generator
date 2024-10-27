@@ -1,8 +1,19 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { useThisStateEveryWhere } from "../utils/consumer";
 
 export const CopyPassword: FC = () => {
   const globalState = useThisStateEveryWhere();
+  const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
+
+  const handleCopyPassword = (): void => {
+    globalState?.copyToClipboard();
+    const element = textAreaRef.current;
+    if (element) {
+      element.select();
+      element.setSelectionRange(0, 99999);
+    }
+  };
+
   return (
     <div className="mt-[4.5rem] cs:mt-6 space-y-3">
       <label
@@ -18,8 +29,10 @@ export const CopyPassword: FC = () => {
         rows={6}
         readOnly
         value={globalState?.state.displayPassword}
+        ref={textAreaRef}
       ></textarea>
       <button
+        onClick={handleCopyPassword}
         className="inline-block text-[1rem] py-1.5 rounded-[.4rem] w-full sm:py-2 sm:text-[1.20rem] bg-purple-700 hover:bg-purple-800 text-white font-semibold"
         type="submit"
       >

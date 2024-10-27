@@ -35,8 +35,19 @@ export const GeneratorContextProvider: FC<ChildrenProps> = ({ children }) => {
     setState((prev) => ({ ...prev, displayPassword: password }));
   };
 
+  const copyToClipboard = async () => {
+    await navigator.clipboard.writeText(state.displayPassword);
+  };
+
   return (
-    <generatorContext.Provider value={{ state, setState, generatePassword }}>
+    <generatorContext.Provider
+      value={{
+        state,
+        setState,
+        generatePassword,
+        copyToClipboard,
+      }}
+    >
       {children}
     </generatorContext.Provider>
   );

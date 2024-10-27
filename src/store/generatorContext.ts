@@ -7,7 +7,9 @@ export const generatorContext = createContext<GeneratorContextType>({
     includeNumbers: false,
     includeSymbols: false,
     includeSpecialCharacters: false,
+    displayPassword: "",
   },
   setState: () => {},
   generatePassword: () => {},
+  copyToClipboard: () => {},
 });
