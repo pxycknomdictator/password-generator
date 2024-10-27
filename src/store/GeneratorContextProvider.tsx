@@ -5,17 +5,10 @@ import {
   StateInitialValues,
 } from "../interfaces/storeInterfaces";
 import { randomNumberGenerator } from "../utils/random";
+import { initialValues } from "../utils/initial";
 
 export const GeneratorContextProvider: FC<ChildrenProps> = ({ children }) => {
-  const [state, setState] = useState<StateInitialValues>({
-    passwordLength: "",
-    includeNumbers: false,
-    includeSymbols: false,
-    includeSpecialCharacters: false,
-    displayPassword: "",
-    error: "",
-    successMessage: "",
-  });
+  const [state, setState] = useState<StateInitialValues>(initialValues);
 
   const generatePassword = (newState: StateInitialValues) => {
     let mainString = "bXleEihQRAzjGTWyoNzqMkStHFDJxwYpLUSZVfgBCrvnacOEmdPjKqtI";
@@ -26,7 +19,11 @@ export const GeneratorContextProvider: FC<ChildrenProps> = ({ children }) => {
     if (Number(newState.passwordLength) < 8) {
       setState((prev) => ({
         ...prev,
-        error: "Password must be between 8 and 50 characters long.",
+        error: "Number should be between 8 - 50",
+        displayPassword: "",
+        includeNumbers: false,
+        includeSpecialCharacters: false,
+        includeSymbols: false,
       }));
       return null;
     }
@@ -34,7 +31,11 @@ export const GeneratorContextProvider: FC<ChildrenProps> = ({ children }) => {
     if (Number(newState.passwordLength) > 50) {
       setState((prev) => ({
         ...prev,
-        error: "Password must be between 8 and 50 characters long.",
+        error: "Number should be between 8 - 50",
+        displayPassword: "",
+        includeNumbers: false,
+        includeSpecialCharacters: false,
+        includeSymbols: false,
       }));
       return null;
     }

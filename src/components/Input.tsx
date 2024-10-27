@@ -30,19 +30,27 @@ export const Input: FC = () => {
         >
           Enter password length
         </label>
-        <input
-          className="w-full py-2 pl-3 text-xl inline-block outline-none border custom_transition border-gray-400 rounded-[.4rem] focus:border-blue-500 focus:border-[2.6px]"
-          type="number"
-          name="number"
-          id="number"
-          placeholder="Enter Number"
-          onChange={handleChangeInputElement}
-          value={globalState?.state.passwordLength}
-        />
-        <span className="text-red-500 text-[.9rem] cs:text-[1.1rem]">
-          {globalState?.state.error}
-        </span>
+        <div className="flex justify-between rounded-[.4rem]">
+          <input
+            className="w-full py-2 pl-3 text-[1rem] cs:text-[1.1rem] inline-block border-y-[1px] border-l-[1px] outline-none custom_transition border-gray-400 focus:border-blue-500 focus:border-l-[2.6px] focus:border-y-[2.6px]"
+            type="number"
+            name="number"
+            id="number"
+            placeholder="Enter Number"
+            onChange={handleChangeInputElement}
+            value={globalState?.state.passwordLength}
+          />
+          <button
+            type="submit"
+            className="bg-blue-500 text-[1.1rem] px-3 hover:bg-blue-600 sm:px-4 text-white font-semibold"
+          >
+            Generate
+          </button>
+        </div>
       </div>
+      <span className="text-red-500 font-semibold text-[.9rem] cs:text-[1.1rem]">
+        {globalState?.state.error}
+      </span>
     </form>
   );
 };

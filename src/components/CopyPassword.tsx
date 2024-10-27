@@ -26,7 +26,7 @@ export const CopyPassword: FC = () => {
         >
           Password
         </label>
-        <span className="text-green-600 font-semibold">
+        <span className="text-purple-600 font-semibold">
           {globalState?.state.successMessage}
         </span>
       </div>
@@ -41,7 +41,7 @@ export const CopyPassword: FC = () => {
       ></textarea>
       <button
         onClick={handleCopyPassword}
-        className="inline-block text-[1rem] py-2 rounded-[.4rem] w-full sm:py-2 sm:text-[1.20rem] bg-purple-700 hover:bg-purple-800 text-white font-semibold"
+        className="inline-block text-[1rem] py-2 rounded-[.2rem] w-full sm:py-2 sm:text-[1.20rem] bg-green-600 hover:bg-green-700 text-white font-semibold"
         type="submit"
       >
         Copy Password
