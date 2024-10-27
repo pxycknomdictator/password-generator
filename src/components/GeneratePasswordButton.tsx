@@ -1,4 +1,6 @@
-export const GeneratePasswordButton = () => {
+import { FC } from "react";
+
+export const GeneratePasswordButton: FC = () => {
   return (
     <div>
       <button

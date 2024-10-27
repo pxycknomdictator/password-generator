@@ -3,7 +3,10 @@ import { FC } from "react";
 export const Input: FC = () => (
   <form>
     <div className="space-y-3">
-      <label className="text-[1.1rem]" htmlFor="number">
+      <label
+        className="text-[1.1rem] cursor-pointer custom_selection"
+        htmlFor="number"
+      >
         Enter password length
       </label>
       <input

@@ -13,4 +13,7 @@
   .custom_transition {
     transition: all linear;
   }
+  .custom_selection::selection {
+    background: transparent;
+  }
 }

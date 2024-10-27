@@ -1,7 +1,12 @@
-export const CopyPassword = () => {
+import { FC } from "react";
+
+export const CopyPassword: FC = () => {
   return (
     <div className="mt-[4.5rem] cs:mt-6 space-y-3">
-      <label className="text-[1.1rem]" htmlFor="copy">
+      <label
+        className="cursor-pointer custom_selection text-[1.1rem]"
+        htmlFor="copy"
+      >
         Copy Password
       </label>
       <textarea
