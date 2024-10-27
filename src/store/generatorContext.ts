@@ -9,4 +9,5 @@ export const generatorContext = createContext<GeneratorContextType>({
     includeSpecialCharacters: false,
   },
   setState: () => {},
+  generatePassword: () => {},
 });

@@ -7,6 +7,7 @@ interface ChildrenProps {
 interface GeneratorContextType {
   state: StateInitialValues;
   setState: Dispatch<SetStateAction<StateInitialValues>>;
+  generatePassword: (newState: StateInitialValues) => void;
 }
 
 interface StateInitialValues {
@@ -14,6 +15,7 @@ interface StateInitialValues {
   includeSpecialCharacters: boolean;
   includeNumbers: boolean;
   includeSymbols: boolean;
+  displayPassword?: string;
 }
 
 export type { ChildrenProps, StateInitialValues, GeneratorContextType };
