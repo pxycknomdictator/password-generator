@@ -10,6 +10,7 @@ export const Input: FC = () => {
     globalState?.setState((prev) => ({
       ...prev,
       passwordLength: event.target.value,
+      error: "",
     }));
   };
 
@@ -30,6 +31,7 @@ export const Input: FC = () => {
           onChange={handleChangeInputElement}
           value={globalState?.state.passwordLength}
         />
+        <span className="text-red-500">{globalState?.state.error}</span>
       </div>
     </form>
   );

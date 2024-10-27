@@ -17,6 +17,8 @@ interface StateInitialValues {
   includeNumbers: boolean;
   includeSymbols: boolean;
   displayPassword: string;
+  error: string;
+  successMessage: string;
 }
 
 export type { ChildrenProps, StateInitialValues, GeneratorContextType };

@@ -13,13 +13,23 @@ export const GeneratorContextProvider: FC<ChildrenProps> = ({ children }) => {
     includeSymbols: false,
     includeSpecialCharacters: false,
     displayPassword: "",
+    error: "",
+    successMessage: "",
   });
 
-  const generatePassword = (newState: StateInitialValues): void => {
+  const generatePassword = (newState: StateInitialValues) => {
     let mainString = "bXleEihQRAzjGTWyoNzqMkStHFDJxwYpLUSZVfgBCrvnacOEmdPjKqtI";
     const numbers = "1234567890";
     const symbols = "!@#$%^&*()-=+";
     const specialCharacters = "{}[]:;\"'<>,.?/|\\";
+
+    if (Number(newState.passwordLength) <= 8) {
+      setState((prev) => ({
+        ...prev,
+        error: "Password Length must be 8 characters long",
+      }));
+      return null;
+    }
 
     let password: string = "";
 
@@ -32,7 +42,7 @@ export const GeneratorContextProvider: FC<ChildrenProps> = ({ children }) => {
       password += mainString[id];
     }
 
-    setState((prev) => ({ ...prev, displayPassword: password }));
+    setState((prev) => ({ ...prev, displayPassword: password, error: "" }));
   };
 
   const copyToClipboard = async () => {

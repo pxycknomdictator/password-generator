@@ -7,21 +7,29 @@ export const CopyPassword: FC = () => {
 
   const handleCopyPassword = (): void => {
     globalState?.copyToClipboard();
-    const element = textAreaRef.current;
-    if (element) {
-      element.select();
-      element.setSelectionRange(0, 99999);
-    }
+    globalState?.setState((prev) => ({
+      ...prev,
+      successMessage: "Text Copied",
+    }));
+
+    setTimeout(() => {
+      globalState?.setState((prev) => ({ ...prev, successMessage: "" }));
+    }, 2000);
   };
 
   return (
     <div className="mt-[4.5rem] cs:mt-6 space-y-3">
-      <label
-        className="cursor-pointer custom_selection text-[1.1rem]"
-        htmlFor="copy"
-      >
-        Password
-      </label>
+      <div className="flex items-center justify-between">
+        <label
+          className="cursor-pointer custom_selection text-[1.1rem]"
+          htmlFor="copy"
+        >
+          Password
+        </label>
+        <span className="text-green-600 font-semibold">
+          {globalState?.state.successMessage}
+        </span>
+      </div>
       <textarea
         className="w-full pl-3 text-[1.1rem] resize-none inline-block outline-none border custom_transition border-gray-400 rounded-[.4rem] pt-2 focus:border-blue-500 focus:border-[2.6px]"
         name="copy"

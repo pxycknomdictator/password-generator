@@ -8,6 +8,8 @@ export const generatorContext = createContext<GeneratorContextType>({
     includeSymbols: false,
     includeSpecialCharacters: false,
     displayPassword: "",
+    successMessage: "",
+    error: "",
   },
   setState: () => {},
   generatePassword: () => {},
