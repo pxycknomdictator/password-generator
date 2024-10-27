@@ -28,6 +28,7 @@ export const Input: FC = () => {
           type="number"
           name="number"
           id="number"
+          placeholder="Enter Number"
           onChange={handleChangeInputElement}
           value={globalState?.state.passwordLength}
         />

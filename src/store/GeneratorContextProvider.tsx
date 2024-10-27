@@ -26,7 +26,15 @@ export const GeneratorContextProvider: FC<ChildrenProps> = ({ children }) => {
     if (Number(newState.passwordLength) <= 8) {
       setState((prev) => ({
         ...prev,
-        error: "Password Length must be 8 characters long",
+        error: "Password must be between 8 and 50 characters long.",
+      }));
+      return null;
+    }
+
+    if (Number(newState.passwordLength) > 50) {
+      setState((prev) => ({
+        ...prev,
+        error: "Password must be between 8 and 50 characters long.",
       }));
       return null;
     }
