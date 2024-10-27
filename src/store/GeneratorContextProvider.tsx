@@ -23,7 +23,7 @@ export const GeneratorContextProvider: FC<ChildrenProps> = ({ children }) => {
     const symbols = "!@#$%^&*()-=+";
     const specialCharacters = "{}[]:;\"'<>,.?/|\\";
 
-    if (Number(newState.passwordLength) <= 8) {
+    if (Number(newState.passwordLength) < 8) {
       setState((prev) => ({
         ...prev,
         error: "Password must be between 8 and 50 characters long.",
