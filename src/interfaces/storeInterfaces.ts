@@ -1,7 +1,12 @@
-import { ReactNode } from "react";
+import { Dispatch, ReactNode, SetStateAction } from "react";
 
 interface ChildrenProps {
   children: ReactNode;
+}
+
+interface GeneratorContextType {
+  state: StateInitialValues;
+  setState: Dispatch<SetStateAction<StateInitialValues>>;
 }
 
 interface StateInitialValues {
@@ -11,4 +16,4 @@ interface StateInitialValues {
   includeSymbols: boolean;
 }
 
-export type { ChildrenProps, StateInitialValues };
+export type { ChildrenProps, StateInitialValues, GeneratorContextType };
