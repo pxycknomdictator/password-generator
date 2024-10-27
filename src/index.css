@@ -3,7 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  html,
+  body {
+    box-sizing: border-box;
+  }
   .custom_shadow {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  .custom_transition {
+    transition: all linear;
   }
 }
