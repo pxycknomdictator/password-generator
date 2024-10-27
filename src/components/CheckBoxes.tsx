@@ -12,7 +12,7 @@ export const CheckBoxes: FC = () => {
   };
 
   return (
-    <section className="space-y-1 my-6">
+    <section className="space-y-1 my-3.5">
       <div className="space-x-3 w-fit">
         <input
           className="scale-110"
@@ -23,7 +23,7 @@ export const CheckBoxes: FC = () => {
           onChange={handleChangeCheckboxes}
         />
         <label
-          className="text-[1.1rem] custom_selection cursor-pointer"
+          className="text-[1rem] cs:text-[1.1rem] custom_selection cursor-pointer"
           htmlFor="includeNumbers"
         >
           Include Numbers
@@ -39,7 +39,7 @@ export const CheckBoxes: FC = () => {
           onChange={handleChangeCheckboxes}
         />
         <label
-          className="text-[1.1rem] custom_selection cursor-pointer"
+          className="text-[1rem] cs:text-[1.1rem] custom_selection cursor-pointer"
           htmlFor="includeSpecialCharacters"
         >
           Include Special Characters
@@ -55,7 +55,7 @@ export const CheckBoxes: FC = () => {
           onChange={handleChangeCheckboxes}
         />
         <label
-          className="text-[1.1rem] custom_selection cursor-pointer"
+          className="text-[1rem] cs:text-[1.1rem] custom_selection cursor-pointer"
           htmlFor="includeSymbols"
         >
           Include Symbols

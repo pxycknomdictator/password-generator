@@ -18,10 +18,10 @@ export const CopyPassword: FC = () => {
   };
 
   return (
-    <div className="mt-[4.5rem] cs:mt-6 space-y-3">
+    <div className="mt-[2.5rem] cs:mt-3.5 space-y-2">
       <div className="flex items-center justify-between">
         <label
-          className="cursor-pointer custom_selection text-[1.1rem]"
+          className="cursor-pointer custom_selection text-[1rem] cs:text-[1.1rem]"
           htmlFor="copy"
         >
           Password
@@ -41,7 +41,7 @@ export const CopyPassword: FC = () => {
       ></textarea>
       <button
         onClick={handleCopyPassword}
-        className="inline-block text-[1rem] py-1.5 rounded-[.4rem] w-full sm:py-2 sm:text-[1.20rem] bg-purple-700 hover:bg-purple-800 text-white font-semibold"
+        className="inline-block text-[1rem] py-2 rounded-[.4rem] w-full sm:py-2 sm:text-[1.20rem] bg-purple-700 hover:bg-purple-800 text-white font-semibold"
         type="submit"
       >
         Copy Password

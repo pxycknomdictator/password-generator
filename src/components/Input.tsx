@@ -16,9 +16,9 @@ export const Input: FC = () => {
 
   return (
     <form>
-      <div className="space-y-3">
+      <div className="space-y-2">
         <label
-          className="text-[1.1rem] cursor-pointer custom_selection"
+          className="text-[1rem] cs:text-[1.1rem] cursor-pointer custom_selection"
           htmlFor="number"
         >
           Enter password length
@@ -31,7 +31,9 @@ export const Input: FC = () => {
           onChange={handleChangeInputElement}
           value={globalState?.state.passwordLength}
         />
-        <span className="text-red-500">{globalState?.state.error}</span>
+        <span className="text-red-500 text-[.9rem] cs:text-[1.1rem]">
+          {globalState?.state.error}
+        </span>
       </div>
     </form>
   );
