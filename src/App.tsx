@@ -1,5 +1,10 @@
-export const App = () => (
-  <h1 className="text-3xl underline text-center">
-    PWD Generator With React + TypeScript
-  </h1>
+import { FC } from "react";
+import { Heading } from "./components/Heading";
+
+export const App: FC = () => (
+  <main className="w-screen h-screen grid place-items-center">
+    <section>
+      <Heading />
+    </section>
+  </main>
 );
