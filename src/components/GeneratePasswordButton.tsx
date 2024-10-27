@@ -4,7 +4,10 @@ import { useThisStateEveryWhere } from "../utils/consumer";
 export const GeneratePasswordButton: FC = () => {
   const globalState = useThisStateEveryWhere();
 
-  const handleGeneratePassword = (): void => {
+  const handleGeneratePassword = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ): void => {
+    event.preventDefault();
     globalState?.generatePassword(globalState.state);
   };
 

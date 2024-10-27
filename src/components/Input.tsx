@@ -14,8 +14,15 @@ export const Input: FC = () => {
     }));
   };
 
+  const handleGeneratePassword = (
+    event: React.FormEvent<HTMLFormElement>
+  ): void => {
+    event.preventDefault();
+    globalState?.generatePassword(globalState.state);
+  };
+
   return (
-    <form>
+    <form onSubmit={handleGeneratePassword}>
       <div className="space-y-2">
         <label
           className="text-[1rem] cs:text-[1.1rem] cursor-pointer custom_selection"
