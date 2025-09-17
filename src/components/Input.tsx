@@ -42,7 +42,7 @@ export const Input: FC = () => {
           />
           <button
             type="submit"
-            className="bg-blue-500 text-[1.1rem] px-3 hover:bg-blue-600 sm:px-4 text-white font-semibold"
+            className="bg-orange-500 text-[1.1rem] px-3 hover:bg-orange-600 sm:px-4 text-white font-semibold"
           >
             Generate
           </button>
